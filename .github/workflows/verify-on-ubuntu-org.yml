@@ -10,13 +10,13 @@ jobs:
     steps:
     - name: Checkout source code
       uses: actions/checkout@v1
-    - name: Mirror Github to Gitee
+    - name: Mirror Github to GitCode
       uses: ./.
       with:
         src: github/hub-mirror-action
-        dst: gitee/hub-mirror-action
-        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-        dst_token: ${{ secrets.GITEE_TOKEN }}
+        dst: gitcode/hub-mirror-action
+        dst_key: ${{ secrets.GITCODE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITCODE_TOKEN }}
         account_type: org
         # Only sync normal repo
         black_list: 'test'

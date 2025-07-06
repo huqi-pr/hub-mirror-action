@@ -25,13 +25,13 @@ jobs:
         key: ${{ runner.os }}-hub-repos-cache-${{ steps.get-time.outputs.date }}
         restore-keys: ${{ runner.os }}-hub-repos-cache
 
-    - name: Mirror Github to Gitee with white list and cache
+    - name: Mirror Github to GitCode with white list and cache
       uses: ./.
       with:
         src: github/Yikun
-        dst: gitee/yikunkero
-        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-        dst_token:  ${{ secrets.GITEE_TOKEN }}
+        dst: gitcode/huqi
+        dst_key: ${{ secrets.GITCODE_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.GITCODE_TOKEN }}
         cache_path: /github/workspace/hub-mirror-cache
         white_list: 'hub-mirror-action, hexo-migrator-github-issue'
         force_update: true
