@@ -28,7 +28,7 @@ jobs:
     - name: Mirror Github to GitCode with white list and cache
       uses: ./.
       with:
-        src: github/Yikun
+        src: github/hu-qi
         dst: gitcode/huqi
         dst_key: ${{ secrets.GITCODE_PRIVATE_KEY }}
         dst_token:  ${{ secrets.GITCODE_TOKEN }}

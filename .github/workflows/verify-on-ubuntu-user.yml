@@ -13,11 +13,11 @@ jobs:
     - name: Mirror Github to GitCode with white list
       uses: ./.
       with:
-        src: github/Yikun
+        src: github/hu-qi
         dst: gitcode/huqi
         dst_key: ${{ secrets.GITCODE_PRIVATE_KEY }}
         dst_token:  ${{ secrets.GITCODE_TOKEN }}
-        static_list: 'hub-mirror-action,hashes, simple-spring'
+        static_list: 'starReport, weather-mcp, PaddlePaddle-badge'
         force_update: true
         debug: true
         mappings: 'hashes=>hashes_gitcode'

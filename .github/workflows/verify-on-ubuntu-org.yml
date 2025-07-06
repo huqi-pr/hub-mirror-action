@@ -13,13 +13,13 @@ jobs:
     - name: Mirror Github to GitCode
       uses: ./.
       with:
-        src: github/hub-mirror-action
-        dst: gitcode/hub-mirror-action
+        src: github/IOE-AI
+        dst: gitcode/IOEAI
         dst_key: ${{ secrets.GITCODE_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITCODE_TOKEN }}
         account_type: org
         # Only sync normal repo
         black_list: 'test'
-        white_list: 'normal,test,empty'
+        white_list: 'happy-llm,tiny-vue-mcp,YOLOX'
         force_update: true
         debug: true
