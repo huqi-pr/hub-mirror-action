@@ -10,16 +10,16 @@ jobs:
     steps:
     - name: Checkout source code
       uses: actions/checkout@v1
-    - name: Mirror Github to Gitee
-      uses: ./.
+    - name: Mirror Github to Gitcode
+      uses: Yikun/hub-mirror-action@master
       with:
-        src: github/hub-mirror-action
-        dst: gitee/hub-mirror-action
-        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-        dst_token: ${{ secrets.GITEE_TOKEN }}
+        src: github/huqi-pr
+        dst: gitcode/huqi-pr
+        dst_key: ${{ secrets.GITCODE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITCODE_TOKEN }}
         account_type: org
         # Only sync normal repo
-        black_list: 'test'
-        white_list: 'normal,test,empty'
+        black_list: 'hub-mirror-action'
+        white_list: 'tiny-charts,trending-in-one,2024-China-Open-Source-Report'
         force_update: true
         debug: true

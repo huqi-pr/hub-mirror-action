@@ -10,14 +10,14 @@ jobs:
     steps:
     - name: Checkout source codes
       uses: actions/checkout@v1
-    - name: Mirror Github to Gitee with white list
-      uses: ./.
+    - name: Mirror Github to Gitcode with white list
+      uses: Yikun/hub-mirror-action@master
       with:
-        src: github/Yikun
-        dst: gitee/yikunkero
-        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-        dst_token:  ${{ secrets.GITEE_TOKEN }}
-        static_list: 'hub-mirror-action,hashes, simple-spring'
+        src: github/huqi-pr
+        dst: gitcode/huqi
+        dst_key: ${{ secrets.GITCODE_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.GITCODE_TOKEN }}
+        static_list: 'hub-mirror-action,trending-in-one,2024-China-Open-Source-Report'
         force_update: true
         debug: true
-        mappings: 'hashes=>hashes_gitee'
+        mappings: '2024-China-Open-Source-Report=>2024-China-Open-Source-Report_gitcode'
